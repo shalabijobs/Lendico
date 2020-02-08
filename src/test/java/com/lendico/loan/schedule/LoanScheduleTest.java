@@ -8,17 +8,20 @@ public class LoanScheduleTest {
 
     @Test
     public void testValidSchedule() {
-        ScheduleSystem scheduleSystem = UnitScheduleSystem.create();
-        LoanScheduleTestCases testCases = new LoanScheduleTestCases(scheduleSystem);
+        LoanScheduleTestCases testCases = create();
 
         testCases.testValid("5000-24-5.json");
     }
 
     @Test
     public void testInvalidInput() {
-        ScheduleSystem scheduleSystem = UnitScheduleSystem.create();
-        LoanScheduleTestCases testCases = new LoanScheduleTestCases(scheduleSystem);
+        LoanScheduleTestCases testCases = create();
 
         testCases.testInvalidInput();
+    }
+
+    private LoanScheduleTestCases create() {
+        ScheduleSystem scheduleSystem = UnitScheduleSystem.create();
+        return new LoanScheduleTestCases(scheduleSystem);
     }
 }
