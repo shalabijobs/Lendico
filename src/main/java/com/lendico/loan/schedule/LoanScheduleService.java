@@ -35,7 +35,8 @@ public class LoanScheduleService {
         LoanSchedule loanSchedule = LoanSchedule.create(amount, date, annuity, interest);
         double remainingPrincipal = loanSchedule.getRemainingOutstandingPrincipal();
         loanSchedule.setPrincipal(Rounder.round(loanSchedule.getPrincipal() + remainingPrincipal));
-        loanSchedule.setRemainingOutstandingPrincipal(remainingPrincipal - remainingPrincipal);
+        loanSchedule.setBorrowerPaymentAmount(loanSchedule.getPrincipal() + interest);
+        loanSchedule.setRemainingOutstandingPrincipal(0);
 
         return loanSchedule;
     }
