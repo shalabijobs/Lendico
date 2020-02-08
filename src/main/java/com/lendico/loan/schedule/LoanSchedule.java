@@ -1,14 +1,9 @@
 package com.lendico.loan.schedule;
 
-import lombok.Getter;
-import lombok.Setter;
-
-import java.math.BigDecimal;
+import lombok.Data;
 import java.time.LocalDateTime;
-import java.util.Date;
 
-@Getter
-@Setter
+@Data
 public class LoanSchedule {
     public static LoanSchedule create(double amount, LocalDateTime date, double annuity, double interest) {
         LoanSchedule loanSchedule = new LoanSchedule();
