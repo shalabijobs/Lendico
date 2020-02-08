@@ -1,7 +1,8 @@
-package com.lendico.loan.schedule;
+package com.lendico.loan.schedule.unit;
 
 import com.lendico.loan.facade.ScheduleSystem;
 import com.lendico.loan.facade.UnitScheduleSystem;
+import com.lendico.loan.schedule.LoanScheduleTestCases;
 import org.junit.jupiter.api.Test;
 
 public class LoanScheduleTest {
@@ -10,7 +11,7 @@ public class LoanScheduleTest {
     public void testValidSchedule() {
         LoanScheduleTestCases testCases = create();
 
-        testCases.testValid("5000-24-5.json");
+        testCases.testValid();
     }
 
     @Test

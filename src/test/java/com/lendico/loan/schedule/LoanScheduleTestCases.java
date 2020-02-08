@@ -11,7 +11,8 @@ import java.util.List;
 public class LoanScheduleTestCases {
     private final ScheduleSystem scheduleSystem;
 
-    public void testValid(String fileName) {
+    public void testValid() {
+        String fileName = "5000-24-5.json";
         RepaymentPlanInput repaymentPlanInput = DataFactory.createRepaymentPlanInput(fileName);
         ResponseEntity<List<LoanSchedule>> result = scheduleSystem.schedule(repaymentPlanInput);
         Assertions.assertEquals(HttpStatus.OK, result.getStatusCode());

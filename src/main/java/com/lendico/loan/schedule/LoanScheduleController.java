@@ -11,7 +11,7 @@ import java.util.List;
 @RestController
 @RequiredArgsConstructor
 public class LoanScheduleController {
-    public static final String URL = "generate-plan";
+    public static final String URL = "/generate-plan";
 
     private final LoanScheduleService loanScheduleService;
 
