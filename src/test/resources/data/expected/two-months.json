@@ -1,0 +1,18 @@
+[
+  {
+    "borrowerPaymentAmount": 2515.64,
+    "date": "2018-01-01T00:00:01",
+    "initialOutstandingPrincipal": 5000.0,
+    "interest": 20.83,
+    "principal": 2494.81,
+    "remainingOutstandingPrincipal": 2505.19
+  },
+  {
+    "borrowerPaymentAmount": 2515.63,
+    "date": "2018-02-01T00:00:01",
+    "initialOutstandingPrincipal": 2505.19,
+    "interest": 10.44,
+    "principal": 2505.19,
+    "remainingOutstandingPrincipal": 0.0
+  }
+]

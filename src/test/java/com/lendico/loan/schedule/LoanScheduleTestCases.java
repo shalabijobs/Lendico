@@ -13,6 +13,18 @@ public class LoanScheduleTestCases {
 
     public void testValid() {
         String fileName = "5000-24-5.json";
+        testValid(fileName);
+    }
+
+    public void testInvalidInput() {
+        for(String fileName : invalidFiles) {
+            RepaymentPlanInput repaymentPlanInput = DataFactory.createRepaymentPlanInput(fileName);
+            ResponseEntity<List<LoanSchedule>> result = scheduleSystem.schedule(repaymentPlanInput);
+            Assertions.assertEquals(HttpStatus.BAD_REQUEST, result.getStatusCode());
+        }
+    }
+
+    public void testValid(String fileName) {
         RepaymentPlanInput repaymentPlanInput = DataFactory.createRepaymentPlanInput(fileName);
         ResponseEntity<List<LoanSchedule>> result = scheduleSystem.schedule(repaymentPlanInput);
         Assertions.assertEquals(HttpStatus.OK, result.getStatusCode());
@@ -25,15 +37,6 @@ public class LoanScheduleTestCases {
         List<LoanSchedule> expectedLoanSchedules = DataFactory.createLoanSchedule(fileName);
         validateLoanSchedule(loanSchedules, expectedLoanSchedules);
     }
-
-    public void testInvalidInput() {
-        for(String fileName : invalidFiles) {
-            RepaymentPlanInput repaymentPlanInput = DataFactory.createRepaymentPlanInput(fileName);
-            ResponseEntity<List<LoanSchedule>> result = scheduleSystem.schedule(repaymentPlanInput);
-            Assertions.assertEquals(HttpStatus.BAD_REQUEST, result.getStatusCode());
-        }
-    }
-
     private void validateLoanSchedule(List<LoanSchedule> loanSchedules, List<LoanSchedule> expectedLoanSchedules) {
         int i = 0;
         for(LoanSchedule loanSchedule : loanSchedules) {
