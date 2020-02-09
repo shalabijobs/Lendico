@@ -1,0 +1,44 @@
+{
+	"info": {
+		"_postman_id": "687bf653-33af-4a83-89df-cd6e08973c93",
+		"name": "Lendico",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "loan schedule",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n \"loanAmount\": \"5000\",\r\n \"nominalRate\": \"5.0\",\r\n \"duration\": 24,\r\n \"startDate\": \"2018-01-01T00:00:01Z\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8080/generate-plan",
+					"host": [
+						"localhost"
+					],
+					"port": "8080",
+					"path": [
+						"generate-plan"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
